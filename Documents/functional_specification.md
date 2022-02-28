@@ -1,6 +1,6 @@
 # Bevezető:
 
-A moodle rendszer célja, hogy a diákok és tanárok számára megkönnyítse a mindennapi munkát. Legfőbb felhasználási körébe tartoznak a tananyagok, tesztek, dolgozatok, feladatok kiírása a diákok számára, illetve a tanuláshoz szükséges fileok megosztása. Az egyes tantárgyakat kurzusoknak, a különböző témaköröket moduloknak nevezzük, mellyekhez hozzáférést biztosíthatunk az ahhoz jogosult diákok számára. Használatának előnye még a rendezettség, azonnal visszajelzés tesztek esetén, átlátható tantervkövetés.
+A moodle rendszer célja, hogy a diákok és tanárok számára megkönnyítse a mindennapi munkát. Legfőbb felhasználási körébe tartoznak a tananyagok, tesztek, dolgozatok, feladatok kiírása a diákok számára, illetve a tanuláshoz szükséges fileok megosztása. Az egyes tantárgyakat kurzusoknak, a különböző témaköröket moduloknak nevezzük, melyekhez hozzáférést biztosíthatunk az ahhoz jogosult diákok számára. Használatának előnye még a rendezettség, azonnal visszajelzés tesztek esetén, átlátható tanterv követés.
 
 # Jelenlegi helyzet leírása:
 
@@ -12,5 +12,5 @@ A felhasználó által megadott személyes adatok bizalmasan lesznek kezelve, ne
 
 # Jelenlegi üzleti folyamatok modellje:
 
-Az Eszterházy Károly Katolikus Egyetemen jelenleg nem üzemel hasonló rendszer, ezen üzleti hiány kitöltésére készül a project. (Ez egy fiktív feladat az AFP2 tantáryghoz, jelelneg is elérhető az EKE moodle rendszere, ez a project a másolata.)
+Az Eszterházy Károly Katolikus Egyetemen jelenleg nem üzemel hasonló rendszer, ezen üzleti hiány kitöltésére készül a project. (Ez egy fiktív feladat az AFP2 tantárgyhoz, jelenleg is elérhető az EKE moodle rendszere, ez a project a másolata.)
 
