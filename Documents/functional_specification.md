@@ -8,7 +8,25 @@ A moodle rendszer célja, hogy a diákok és tanárok számára megkönnyítse a
 A Moodle egy igen elterjedt, nagy népszerűségnek örvendő tanulást segítő felület. Népszerűségének egyik oka az egyszerű kezelhetősége. A Moodle ugyanis egyszerre alkalmas a tartalom tárolására, szerkesztésére, összeállítására, a diákok „kezelésére”, az egyes diákok haladásának, tevékenységének nyomon követésére, munkájuk értékelésére, úgy, hogy mindeközben a klasszikus tanulási folyamat részleteit virtuálisan is megjeleníti, tehát osztályok vannak, házi feladatok adhatók, a résztvevők kommunikálhatnak.
 # Vágyálom rendszer leírása:
 
-Célunk egy moodle rendszer fejlesztése amely a PHP Laravel keretrendszer segítségével készül. A program egy MySQL adatbázishoz csatlakozik ahonnan adatokat kér le, módosít és töröl. Három különböző szerepkört különböztetünk meg: Adminisztrátor, Tanár és Diák. Az adminisztrátorok hozzáadhatnak az adatbázishoz új kurzusokat, diákok és tanárokat. Ezen kívül az adatbázisban tárolt adatokat módosíthatják és törölhetik. A tanárok szerepköre lefedi a kurzusok, modulok létrehozását és karbantartását, diákokat rendelhetnek kurzusaikhoz, illetve adatokat tölthetnek fel, módosíthatnak és törölhetnek olyan területeken ahová hozzáférésük engedélyezett. (PL: kurzusok, modulok) A diákok megtekinthetik a hozzájuk rendelt kurzusokat, tananyagokat és modulokat. Kitölthetnek teszteket, fileokat tölthetnek fel. Azt, hogy a diák számára mi elérhető az adminisztrátorok és a tanárok határozzák meg.
+Célunk egy Moodle rendszer fejlesztése amely a PHP Laravel keretrendszer segítségével készül. A program egy MySQL adatbázishoz csatlakozik amiből adatokat kér le, módosít és töröl. Három szerepkört különböztetünk meg: adminisztrátor, tanár és diák. Az adminisztrátorok hozzáadhatnak az adatbázishoz új kurzusokat, diákok és tanárkat. Ezenkívűl az adatbázisban tárolt adatokat módosíthatják és törölhetik. A tanárok szerepköre lefedi a kurzusok, modulok létrehozását és karbantartását, diákokat rendelhetnek kurzusaikhoz, illetve adatokat tölthetnek fel, módosíthatnak és törölhetnek, olyan területeken ahová hozzáférésük engedélyezett. (PL: kurzusok, modulok) A diákok megtekinthetik a hozzájuk rendelt kurzusokat, tananyagokat és modulokat. Kitölthetnek teszteket, fájl-okat tölthetnek fel. Hogy a diák számára mi elérhető az adminisztrátorok és a tanárok határozzák meg.
+
+Az adatbázisban tárolt adatok a felhasználókról:
+
+ - Felhasználó azonosító
+ - Jelszó (Titkosítva)
+ - Feladatkör egyedi azonosító
+ - Emailcím
+ - Keresztnév
+ - Középső név
+ - Utónév
+ - Telefonszám
+
+Az adatbázisban tárolt adatok a kurzusokról:
+ - Kurzus azonosító
+ - Kurzuskód
+ - Kurzusnév
+ - Kategória
+ - Kurzus tulajdonos
 
 
 # A rendszerre vonatkozó pályázat, törvények, rendeletek, szabványok és ajánlások leírása:
@@ -21,7 +39,40 @@ Az Eszterházy Károly Katolikus Egyetemen jelenleg nem üzemel hasonló rendsze
 
 # Igényelt üzleti folyamatok modellje:
 
-A moodlenek lesznek adminisztrátorai, tanárjai és diákjai. A követelmény listában feltüntetett funkcionális és nem funkcionális követelményeknek megfelelően fog majd elkészülni. Az adminisztrátoroknak és tanároknak biztosítunk egy regisztrációs felületet, a diákok az intézménybe való jelentkezésük és személy adataik felhasználásával viszik fel a rendszerbe (Neptunkód, Teljes név). A felhasználókat szerepkörük alapján csoportosítjuk.
+Moodle rendszerünk három szerepkört különböztet meg: adminisztrátor, tanár és diák. Alkalmazásunk a követelmény listában feltüntetett funkcionális és nem funkcionális követelményeknek megfelelően fog elkészülni. Az adminisztrátoroknak és tanároknak biztosítunk egy regisztrációs felületet, a diákokat az intézménybe való jelentkezésük és személyes adataik felhasználásával visszük fel a rendszerbe. A felhasználókat szerepkörük alapján csoportosítjuk.
+
+Adminisztrátorok jogai:
+
+-   Diákok listázása
+-   Új diák hozzáadása
+-   Regisztrált diák adatainak módosítása
+-   Regisztrált diák törlése
+-   Tanárok listázása
+-   Új tanár hozzáadása
+-   Regisztrált tanár adatainak módosítása
+-   Regisztrált tanár törlése
+-   Kurzusok listázása
+-   Új kurzus hozzáadása
+-   Regisztrált kurzus adatainak módosítása
+-   Regisztrált kurzus törlése
+
+Tanárok jogai:
+
+-   Diákok listázása
+-   Kurzusok listázása
+-   Új kurzus hozzáadása
+-   Saját kurzusának adatainak módosítása
+-   Regisztrált diák hozzáadása a tanár saját kurzusaihoz
+-   Regisztrált diák eltávolítása a tanár saját kurzusáról
+-   Regisztrált kurzus törlése
+
+Diákok jogai:
+
+-   Saját kurzusok listázása
+-   Saját kurzuson belül hozzáférés a tananyagokhoz, tesztekhez, stb.
+-   Kurzus igénylés indítása
+
+Megjegyzés: Ebben a kontextusban a "Regisztrált" szó jelentése: Az adatbázisba felvitt rekord, lehet szó tanárról, adminisztrátorról vagy diákról.
 
 # Követelménylista
 | Modul | ID | Név | Verziószám | Kifejtés |
