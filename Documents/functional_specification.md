@@ -116,7 +116,7 @@ Megjegyzés: Ebben a kontextusban a "Regisztrált" szó jelentése: Az adatbázi
 - a tanároknak és diákoknak regisztráció szükséges a funkciók használatához  
   
 # Képernyőtervek  
-  
+  ![Image of screen design](/Documents/Képernyőtervek/Adminisztr%C3%A1tor_Felhaszn%C3%A1l%C3%B3k.png)
   
 # Forgatókönyvek
 
