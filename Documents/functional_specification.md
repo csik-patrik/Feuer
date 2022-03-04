@@ -87,13 +87,22 @@ Megjegyzés: Ebben a kontextusban a "Regisztrált" szó jelentése: Az adatbázi
 | Modifikáció | K5 | Felhasználó módosítása | 1.0 | A felhasználó módosítani tudja saját Felhasználónevét. Ehhez szükséges a régi és az új felhasználók megadása, az új megerősítése, valamint a felhasználó jelszavának megadása. |  
 | Modifikáció | K6 | Jelszó módosítása | 1.0 | A felhasználó módosítani tudja saját Felhasználónevét. Ehhez szükséges a régi és az új felhasználók megadása, az új megerősítése, valamint a felhasználó jelszavának megadása.|  
 | Modifikáció | K7 | Elfelejtett felhasználónév / jelszó | 1.0 | Ha a felhasználó elfelejtette a felhasználónevét, vagy jelszavát akkor ezzel az opcióval egy Adminhoz tud fordulni.|  
-| Kurzus | K8 | Kurzus létrehozása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes új kurzust létrehozni|  
-| Kurzus | K9 | Kurzus módosítása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzust módosítani|  
-| Kurzus | K10 | Kurzus törlése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzust törölni|  
-| Kurzus | K11 | Diák hozzáadása kurzushoz | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzushoz Diák jogosultsággal rendelkező felhasználót hozzáadni.|  
-| Kurzus | K12 | Diák eltávolítása kurzusból | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzusból Diák jogosultsággal rendelkező felhasználót eltávolítani.|  
-| Kurzus | K13 | Kurzus keresése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzusai közt keresni.|  
-| Kurzus | K14 | Kurzus megtekintése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzusait megtekinteni.|  
+| Modifikáció | K8 | Profil kép megadása | 1.0 | A felhasználó a profiljához beállíthassa a profil képét, illetve azt módosíthassa.| 
+| Kurzus | K9 | Kurzusok kilistázása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes a meglévő kurzusokat kilistázni|  
+| Kurzus | K10 | Kurzus létrehozása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes új kurzust létrehozni|  
+| Kurzus | K11 | Kurzus módosítása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzust módosítani|  
+| Kurzus | K12 | Kurzus törlése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzust törölni|  
+| Kurzus | K13 | Diák hozzáadása kurzushoz | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzushoz Diák jogosultsággal rendelkező felhasználót hozzáadni.|  
+| Kurzus | K14 | Diák eltávolítása kurzusból | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzusból Diák jogosultsággal rendelkező felhasználót eltávolítani.|  
+| Kurzus | K15 | Kurzus keresése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzusai közt keresni.|  
+| Kurzus | K16 | Kurzus megtekintése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzusait megtekinteni.|
+| Kurzus | K17 | Kurzus igénylése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő kurzushoz hozzáférést kérvényezni.|  
+| Felhasználó | K18 | Felhasználók Kilistázása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő felhasználókat kilistázni.|  
+| Felhasználó | K19 | Felhasználó létrehozása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes új felhasználót létrehozni|  
+| Felhasználó | K20 | Felhasználó módosítása | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő felhasználó adatait módosítani|  
+| Felhasználó | K21 | Felhasználó törlése | 1.0 | A felhasználó a megfelelő jogosultságszint birtokában képes meglévő felhasználót törölni| 
+
+
   
 # Használati esetek  
 ## A rendszer felhasználói a következők:  
@@ -141,7 +150,17 @@ Ha a felhasználó tanárként lép a rendszerbe,  akkor a Kezdőlap, Kurzusok, 
 Diákként belépett felhasználóknak a Kezdőlap, Kurzusok, Profil, Kilépés menüpontok jelennek meg a navigációs sávban. A kurzusok menüpont alatt megtalálják a diákok azokat a kurzusokat, melynek tagjai, azaz hozzáférésük van hozzá. A kezdőlapon pedig kereshetnek további kurzusokat és hozzáférést kérhetnek az adott kurzust létrehozó személytől. A profil gombra kattintva megtekinthetik és módosíthatják profiladataikat. Kilépés gombra kattintva pedig kijelentkezhetnek a rendszerből.
   
 # Funkció - követelmény megfeleltetés  
-  
+- K1, K2, K3, K4: A weboldalon a felhasználók az új fiók létrehozása menüpontra kattintva név,  email, jelszó illetve jogosultságuk megadását követve regisztrálhatnak, mely esemény után visszaigazoló emailt kapnak a sikeres regisztrációról. Regisztrációt követően felhasználónév és jelszó megadásával jelentkezhetnek be az oldalon.
+
+- K5, K6, K7, K8: Saját profiljára kattintva megjelennek majd a felhasználó adatai és profilképe, lehetőséget kap azok módosítására illetve a kép cseréjére/megadására. Jelszavát csak emailen keresztül tudja majd megváltoztatni a felhasználó.
+
+- K9, K10, K11, K13, K14, K15, K17: A felhasználók a megfelelő jogosultsággal képesek kuruzsokat keresni, majd a találatokat kilistázni. Ezek után megtekinthet adott kurzusokat, valamint módosíthatja, törölheti a meglévőket, igényelhet hozzáférést, vagy létrehozhat egy újat.
+
+- K13, K14: A felhasználók a megfelelő jogosultsággal képesek diák jogosultságszintel rendelkező felhasználókat hozzáadni, kitörölni kurzusból.
+
+- K15, K16, K17, K18: A felhasználók a megfelelő jogosultság birtokában képes más felhasználókat kilistázni. Ezek után módosíthatja az adataikat, törölhet, vagy létrehozhat új felhasználói profilt.
+
+
   
 # Fogalomszótár  
 - **PHP Laravel**: A Laravel egy PHP keretrendszer, amely drasztikusan javítja a termelékenységet. Már jó ideje itt van. 2011 júniusában jelent meg az első kiadás. Azonban az alapító Taylor Otwell és a legénység aktívan fejleszti. Ez a világ egyik leggyakoribb PHP-keretrendszere az internetes alkalmazások fejlesztésére a kicsi és a nagy projektek között. Hatékonysága, tulajdonságai és méretezhetősége miatt a Laravel a profi tervezők döntése. Olyan könnyen adaptálható, hogy kidolgozza saját webes keretét, amely megfelel a webes alkalmazás igényeinek.  
