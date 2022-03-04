@@ -115,8 +115,16 @@ Megjegyzés: Ebben a kontextusban a "Regisztrált" szó jelentése: Az adatbázi
 - adminisztrátorok részére a rendszer használatához jogosultság, azaz jelszó szükséges (az adminisztrátorok profilját a projektfelelősök adják hozzá az adatbázishoz)  
 - a tanároknak és diákoknak regisztráció szükséges a funkciók használatához  
   
-# Képernyőtervek  
+# Képernyőtervek 
+  ![Image of screen design](/Documents/Képernyőtervek/Bejelentkez%C3%A9s.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Regisztr%C3%A1ci%C3%B3.png)
   ![Image of screen design](/Documents/Képernyőtervek/Adminisztr%C3%A1tor_Felhaszn%C3%A1l%C3%B3k.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Adminisztr%C3%A1tor_Kurzusok.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Tan%C3%A1r_Profil.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Tan%C3%A1r_Kurzusok.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Di%C3%A1k_Kezd%C5%91lap.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Di%C3%A1k_Profil.png)
+  ![Image of screen design](/Documents/Képernyőtervek/Di%C3%A1k_Kurzusok.png)
   
 # Forgatókönyvek
 
