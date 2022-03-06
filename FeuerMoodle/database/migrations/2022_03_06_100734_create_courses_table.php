@@ -17,8 +17,10 @@ return new class extends Migration
             $table->inrements('course_id');
             $table->string('code')->unique();
             $table->string('name');
-            $table->foreign('category_id')->references('category_id')->on('course_categories');
-            $table->foreign('owner_id')->references('user_id')->on('course_categories');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('owner_id');
+            $table->foreign('category_id')->references('category_id')->on('course_categories')->onDelete("null");
+            $table->foreign('owner_id')->references('user_id')->on('users')->onDelete("cascade");
             $table->timestamps();
         });
     }
