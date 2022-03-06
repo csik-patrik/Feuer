@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_data', function (Blueprint $table) {
-            $table->id();
+            $table->increments('user_data_id');
+            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->string('email');
+            $table->string('firstname');
+            $table->string('midname')->nullable();
+            $table->string('lastname');
+            $table->string('phone');
             $table->timestamps();
         });
     }
