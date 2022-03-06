@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('user_data', function (Blueprint $table) {
             $table->increments('user_data_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete("cascade");
             $table->string('email');
             $table->string('firstname');
