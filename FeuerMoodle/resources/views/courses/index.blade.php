@@ -6,7 +6,9 @@
             <div class="pull-left">
                 <h2>Kurzusok listázása</h2>
             </div>
-            
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('courses.create') }}"> Új kurzus hozzáadása</a>
+            </div>
         </div>
     </div>
    

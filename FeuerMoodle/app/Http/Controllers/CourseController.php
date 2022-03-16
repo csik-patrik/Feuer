@@ -27,7 +27,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('courses.create');
     }
 
     /**
@@ -38,7 +38,18 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+            'code' => 'required',
+            'name' => 'required',
+            'categoryId' => 'required',
+            'ownerId' => 'required'
+        ]);
+    
+        Course::create($request->all());
+     
+        return redirect()->route('course.index')
+                        ->with('success','Product created successfully.');
     }
 
     /**
