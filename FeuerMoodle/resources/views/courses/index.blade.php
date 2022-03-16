@@ -22,7 +22,7 @@
             <th>ID</th>
             <th>Code</th>
             <th>Name</th>
-            <th>CAtegoryID</th>
+            <th>CategoryID</th>
             <th>OwnerId</th>
         </tr>
         @foreach ($courses as $course)
