@@ -43,13 +43,23 @@ class CourseController extends Controller
             'code' => 'required',
             'name' => 'required',
             'categoryId' => 'required',
-            'ownerId' => 'required'
+            'ownerId' => 'required',
         ]);
     
-        Course::create($request->all());
-     
-        return redirect()->route('course.index')
-                        ->with('success','Product created successfully.');
+        //Course::create($request->all());
+        
+        Course::insert(
+            [
+            'course_id' => $request['id'],
+            'code' => $request['code'],
+            'name' => $request['name'],
+            'category_id' => $request['categoryId'],
+            'owner_id' => $request['ownerId']
+            ]
+        );
+        // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
+        return redirect()->route('courses.index')
+                        ->with('Sikeres hozzáadás','Kurzus hozzáadása sikeres!');
     }
 
     /**
