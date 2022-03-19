@@ -21,3 +21,5 @@ Route::get('/', function () {
 
   
 Route::resource('/courses', CourseController::class);
+
+Route::get('/courses/delete/{id}', [CourseController::class, 'destroy']);

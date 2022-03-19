@@ -26,6 +26,7 @@
             <th>Name</th>
             <th>CategoryID</th>
             <th>OwnerId</th>
+            <th>Method</th>
         </tr>
         @foreach ($courses as $course)
         <tr>
@@ -35,7 +36,9 @@
             <td>{{ $course->name }}</td>
             <td>{{ $course->category_id }}</td>
             <td>{{ $course->owner_id }}</td>
-
+            <td>
+                <a href={{"/courses/delete/".$course->course_id}}><button class="btn btn-danger">X</button></a>
+            </td>
             
         </tr>
         @endforeach
