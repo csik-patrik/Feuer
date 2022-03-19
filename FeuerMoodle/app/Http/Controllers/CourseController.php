@@ -47,14 +47,15 @@ class CourseController extends Controller
         ]);
     
         //Course::create($request->all());
-        
+        date_default_timezone_set("Europe/Budapest");
         Course::insert(
             [
             'course_id' => $request['id'],
             'code' => $request['code'],
             'name' => $request['name'],
             'category_id' => $request['categoryId'],
-            'owner_id' => $request['ownerId']
+            'owner_id' => $request['ownerId'],
+            'created_at' => date("Y-m-d h:i:sa")
             ]
         );
         // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
