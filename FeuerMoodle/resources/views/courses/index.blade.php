@@ -37,7 +37,7 @@
             <td>{{ $course->category_id }}</td>
             <td>{{ $course->owner_id }}</td>
             <td>
-                <a href={{"/courses/delete/".$course->course_id}}><button class="btn btn-danger">X</button></a>
+                <a onclick="return confirm('Biztosan törli a kurzust?')" href={{"/courses/delete/".$course->course_id}}><button class="btn btn-danger">X</button></a>
             </td>
             
         </tr>
