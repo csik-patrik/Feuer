@@ -18,10 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-  
 Route::resource('/courses', CourseController::class);
-
-Route::get('/courses/delete/{id}', [CourseController::class, 'destroy']);
-
-Route::get('/courses/modify/{course}', [CourseController::class, 'update']);
