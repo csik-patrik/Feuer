@@ -46,8 +46,8 @@ class CourseController extends Controller
             'ownerId' => 'required',
         ]);
     
-        //Course::create($request->all());
         date_default_timezone_set("Europe/Budapest");
+        
         Course::insert(
             [
             'course_id' => $request['id'],
@@ -58,7 +58,6 @@ class CourseController extends Controller
             'created_at' => date("Y-m-d h:i:sa")
             ]
         );
-        // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
         return redirect()->route('courses.index')
                         ->with('Sikeres hozzáadás','Kurzus hozzáadása sikeres!');
     }
