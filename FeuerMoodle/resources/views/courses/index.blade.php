@@ -40,11 +40,11 @@
             <td>{{ $course->owner_id }}</td>
             <td>
                 <a onclick="return confirm('Biztosan törli a kurzust?')"
-                href={{"/courses/delete/".$course->course_id}}>
+                href={{"/courses/delete/".$course->course_id  }}>
                 <button class="btn btn-danger">Delete</button></a>
 
-                <a href={{"/courses/modify/".$course->course_id}}>
-                <button class="btn btn-danger">Modify</button></a>
+                <a href="{{ route('courses.edit', $course) }}">
+                <button class="btn btn-warning">Modify</button></a>
 
             </td>
             
