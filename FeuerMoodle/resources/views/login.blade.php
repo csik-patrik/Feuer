@@ -21,11 +21,22 @@
                                     <img src="images/logo.svg" width="120" height="120">
                                     <h3>{{ config('app.name') }}</h3>
                                 </div>
+                                @if($errors->has('login.invalid'))
+                                    <div class="alert alert-danger" role="alert">
+                                       {{ $errors->first('login.invalid') }}
+                                    </div>
+                                @endif
                                 <div class="mb-3">
-                                    <input class="form-control form-control-lg rounded-pill" id="username" placeholder="Felhasználónév">
+                                    <input class="form-control form-control-lg {{ $errors->has('username') ? 'is-invalid' : '' }} rounded-pill" id="username" name="username" placeholder="Felhasználónév">
+                                    @if ($errors->has('username'))
+                                        <div class="text-start invalid-feedback">{{ $errors->first('username') }}</div>
+                                    @endif
                                 </div>
                                 <div class="mb-3">
-                                    <input type="password" class="form-control form-control-lg rounded-pill" id="password" placeholder="Jelszó">
+                                    <input type="password" class="form-control form-control-lg {{ $errors->has('username') ? 'is-invalid' : '' }} rounded-pill" id="password" name="password" placeholder="Jelszó">
+                                    @if ($errors->has('password'))
+                                        <div class="text-start invalid-feedback">{{ $errors->first('password') }}</div>
+                                    @endif
                                 </div>
                                 <div class="d-grid mb-3">
                                     <button type="submit" class="btn btn-primary btn-lg rounded-pill">Belépés</button>
