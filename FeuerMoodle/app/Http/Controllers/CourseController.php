@@ -81,7 +81,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        
+        return view('courses.edit',compact('course'));
     }
 
     /**
@@ -93,7 +93,18 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        
+        $request->validate([
+            'id' => 'required',
+            'code' => 'required',
+            'name' => 'required',
+            'categoryId' => 'required',
+            'ownerId' => 'required',
+        ]);
+    
+        $course->update($request->all());
+    
+        return redirect()->route('courses.index')
+                        ->with('Sikeres módosítás','Kurzus módosítása sikeres!');
     }
 
     /**
