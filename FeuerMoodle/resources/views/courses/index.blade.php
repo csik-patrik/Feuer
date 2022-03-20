@@ -39,13 +39,17 @@
             <td>{{ $course->category_id }}</td>
             <td>{{ $course->owner_id }}</td>
             <td>
-                <a onclick="return confirm('Biztosan törli a kurzust?')"
-                href={{"/courses/delete/".$course->course_id  }}>
-                <button class="btn btn-danger">Delete</button></a>
+                <form action="{{ route('courses.destroy',$course->course_id) }}" method="POST">
+   
+                    
+   
+                    @csrf
+                    @method('DELETE')
+      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
 
-                <a href="{{ route('courses.edit', $course) }}">
-                <button class="btn btn-warning">Modify</button></a>
-
+                
             </td>
             
         </tr>

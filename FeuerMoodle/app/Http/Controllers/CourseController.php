@@ -81,7 +81,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('courses.edit',compact('course'));
+        
     }
 
     /**
@@ -93,18 +93,7 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        $request->validate([
-            'id' => 'required',
-            'code' => 'required',
-            'name' => 'required',
-            'categoryId' => 'required',
-            'ownerId' => 'required',
-        ]);
-    
-        $course->where('course_id', $request['id'])->update($request->all());
-    
-        return redirect()->route('courses.index')
-                        ->with('Sikeres módosítás','Kurzus módosítása sikeres!');
+        
     }
 
     /**
@@ -113,12 +102,11 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Course $course)
     {
-        $course= Course::where('course_id',$id);
-
         $course->delete();
     
-        return redirect()->route('courses.index');
+        return redirect()->route('courses.index')
+                        ->with('Sikeres törlés!','A kurzus törlése sikeres!');
     }
 }
