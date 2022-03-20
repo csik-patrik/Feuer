@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 
 /*
@@ -14,8 +15,9 @@ use App\Http\Controllers\CourseController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'index'])->name('login');
+Route::post('loginAuth', [AuthController::class, 'login'])->name('login.auth');
+Route::get('main', [AuthController::class, 'showMainPage'])->name('main');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('/courses', CourseController::class);
