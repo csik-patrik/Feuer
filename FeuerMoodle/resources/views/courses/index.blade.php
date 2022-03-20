@@ -48,7 +48,7 @@
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" onclick="return confirm('Biztosan törli a kurzust?')" class="btn btn-danger">Delete</button>
                 </form>
 
                 
