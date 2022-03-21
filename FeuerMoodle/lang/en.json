@@ -3,5 +3,10 @@
     "The :attribute must contain at least one number.": "The :attribute must contain at least one number.",
     "The :attribute must contain at least one symbol.": "The :attribute must contain at least one symbol.",
     "The :attribute must contain at least one uppercase and one lowercase letter.": "The :attribute must contain at least one uppercase and one lowercase letter.",
-    "The given :attribute has appeared in a data leak. Please choose a different :attribute.": "The given :attribute has appeared in a data leak. Please choose a different :attribute."
+    "The given :attribute has appeared in a data leak. Please choose a different :attribute.": "The given :attribute has appeared in a data leak. Please choose a different :attribute.",
+    "404 title": "404 Not found",
+    "404 page not found": "Page not found",
+    "404 description": "The page you are looking for does not exist, or it may have been moved. Check that you typed the address correctly and try again.",
+    "404 go back to homepage": "Go back to homepage"
+
 }
