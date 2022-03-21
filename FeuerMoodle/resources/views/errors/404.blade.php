@@ -24,7 +24,7 @@
                         <h2>{{ __('404 page not found') }}</h2>
                         <p>{{ __('404 description') }}</p>
                     </div>
-                    <a href="{{ route('login') }}" class="btn btn-primary">{{ __('404 go back to homepage') }}</a>
+                    <a href="{{ route('login') }}" class="btn btn-primary rounded-pill">{{ __('404 go back to homepage') }}</a>
                 </div>
             </div>
             
