@@ -1,0 +1,22 @@
+h1
+{
+    color: #fda300;
+    font-weight: 800;
+    font-size: 140px;
+    user-select: none;
+}
+.logo
+{
+    display:inline-block;
+    width: 125px;
+    height: 125px;
+    background-image: url(../images/logo.svg);
+    background-size: cover;
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+}
+p
+{
+    font-size: 16px;
+}
