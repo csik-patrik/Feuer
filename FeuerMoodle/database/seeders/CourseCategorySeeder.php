@@ -14,5 +14,14 @@ class CourseCategorySeeder extends Seeder
      */
     public function run()
     {
+        CourseCategory::create([
+            'name' => 'Kötelező'
+        ]);
+        CourseCategory::create([
+            'name' => 'Szabadon választható'
+        ]);
+        CourseCategory::create([
+            'name' => 'Kötelezően választható'
+        ]);
     }
 }
