@@ -25,7 +25,7 @@
             <th>Felhasználónév</th>
             <th>Jelszó</th>
             <th>Jogosultság ID</th>
-            <th>Metódusok</th>
+            <th>Művelet</th>
         </tr>
         @foreach ($users as $user)
         <tr>
@@ -37,7 +37,7 @@
             <td>
                 <form action="{{ route('users.destroy',$user->user_id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('users.show',$user->user_id) }}">Mutatás</a>
+                    <a class="btn btn-info" href="{{ route('users.show',$user->user_id) }}">Részletek</a>
     
                     <a class="btn btn-primary" href="{{ route('users.edit',$user->user_id) }}">Módosítás</a>
    
