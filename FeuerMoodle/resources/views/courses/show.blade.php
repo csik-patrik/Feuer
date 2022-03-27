@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Kurzus részletek</h2>
+                <h2> Kurzus részletei</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('courses.index') }}"> Vissza</a>
