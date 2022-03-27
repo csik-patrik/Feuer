@@ -24,11 +24,11 @@
         <tr>
             <th>Sorszám</th>
             <th>ID</th>
-            <th>Code</th>
-            <th>Name</th>
-            <th>CategoryID</th>
-            <th>OwnerId</th>
-            <th>Method</th>
+            <th>Kód</th>
+            <th>Név</th>
+            <th>Kategória ID</th>
+            <th>Tulajdonos ID</th>
+            <th>Művelet</th>
         </tr>
         @foreach ($courses as $course)
         <tr>
@@ -41,14 +41,14 @@
             <td>
                 <form action="{{ route('courses.destroy',$course->course_id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('courses.show',$course->course_id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('courses.show',$course->course_id) }}">Részletek</a>
     
-                    <a class="btn btn-primary" href="{{ route('courses.edit',$course->course_id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('courses.edit',$course->course_id) }}">Szerkesztés</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" onclick="return confirm('Biztosan törli a kurzust?')" class="btn btn-danger">Delete</button>
+                    <button type="submit" onclick="return confirm('Biztosan törli a kurzust?')" class="btn btn-danger">Törlés</button>
                 </form>
 
                 
