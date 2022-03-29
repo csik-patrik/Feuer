@@ -19,9 +19,9 @@ class Course extends Model
     {
         return $this->belongsTo(CourseCategory::class, 'category_id');
     }
-    public function owner()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'owner_id');
     }
     use HasFactory;
 }
