@@ -58,7 +58,7 @@ class CourseController extends Controller
             ]
         );
         return redirect()->route('courses.index')
-            ->with('Sikeres hozzáadás', 'Kurzus hozzáadása sikeres!');
+            ->with('success', 'Kurzus hozzáadása sikeres!');
     }
 
     /**
@@ -103,7 +103,7 @@ class CourseController extends Controller
         $course->update($request->all());
 
         return redirect()->route('courses.index')
-            ->with('Sikeres módosítás', 'Kurzus módosítása sikeres!');
+            ->with('success', 'Kurzus módosítása sikeres!');
     }
 
     /**
@@ -117,6 +117,6 @@ class CourseController extends Controller
         $course->delete();
 
         return redirect()->route('courses.index')
-            ->with('Sikeres törlés!', 'A kurzus törlése sikeres!');
+            ->with('success', 'A kurzus törlése sikeres!');
     }
 }
