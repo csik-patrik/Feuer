@@ -19,21 +19,21 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
     <table class="table table-bordered">
         <tr>
             <th>Kód</th>
             <th>Név</th>
-            <th>Kategória ID</th>
-            <th>Tulajdonos ID</th>
+            <th>Kategória</th>
+            <th>Tulajdonos</th>
             <th>Művelet</th>
         </tr>
         @foreach ($courses as $course)
         <tr>
+
             <td>{{ $course->code }}</td>
             <td>{{ $course->name }}</td>
-            <td>{{ $course->category_id }}</td>
-            <td>{{ $course->owner_id }}</td>
+            <td>{{ $course->category->name }}</td>
+            <td>{{ $course->user->username }}</td>
             <td>
                 <form action="{{ route('courses.destroy',$course->course_id) }}" method="POST">
    
