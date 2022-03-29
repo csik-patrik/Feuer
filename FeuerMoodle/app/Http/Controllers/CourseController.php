@@ -49,15 +49,12 @@ class CourseController extends Controller
             'ownerId' => 'required',
         ]);
 
-        date_default_timezone_set("Europe/Budapest");
-
         Course::insert(
             [
                 'code' => $request['code'],
                 'name' => $request['name'],
                 'category_id' => $request['categoryId'],
                 'owner_id' => $request['ownerId'],
-                'created_at' => date("Y-m-d h:i:sa")
             ]
         );
         return redirect()->route('courses.index')
