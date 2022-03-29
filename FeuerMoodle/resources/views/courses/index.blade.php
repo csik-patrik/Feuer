@@ -22,7 +22,6 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>Sorszám</th>
             <th>ID</th>
             <th>Kód</th>
             <th>Név</th>
@@ -32,7 +31,6 @@
         </tr>
         @foreach ($courses as $course)
         <tr>
-            <td>{{ ++$i }}</td>
             <td>{{ $course->course_id }}</td>
             <td>{{ $course->code }}</td>
             <td>{{ $course->name }}</td>
