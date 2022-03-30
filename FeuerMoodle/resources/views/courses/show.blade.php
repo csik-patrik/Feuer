@@ -15,12 +15,6 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Id:</strong>
-                <input type="number" disabled value="{{$course['course_id']}}" name="id" class="form-control" placeholder="Id">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>Kód:</strong>
                 <input type="text" disabled value="{{$course['code']}}" name="code" class="form-control" placeholder="Kurzus kód">
             </div>
@@ -33,14 +27,14 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Kategória Id:</strong>
-                <input type="number" disabled name="categoryId" value="{{$course['category_id']}}" class="form-control" placeholder="Kategória Id">
+                <strong>Kategória:</strong>
+                <input type="text" disabled name="categoryId" value="{{$course->category->name}}" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Tulajdonos Id:</strong>
-                <input type="number " disabled value="{{$course['owner_id']}}" name="ownerId" class="form-control" placeholder="Tulajdonos Id">
+                <strong>Tulajdonos:</strong>
+                <input type="text " disabled value="{{$course->user->username}}" name="ownerId" class="form-control">
             </div>
         </div>
         
