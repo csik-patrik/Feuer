@@ -80,7 +80,10 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('courses.edit', compact('course'));
+        $categories = CourseCategory::orderBy('name')->get();
+        $owners = User::orderBy('username')->get();
+
+        return view('courses.edit', compact('course'))->with('categories', $categories)->with('owners', $owners);
     }
 
     /**

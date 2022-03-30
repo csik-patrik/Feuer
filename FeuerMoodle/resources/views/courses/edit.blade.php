@@ -29,12 +29,6 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Id:</strong>
-                    <input type="number" disabled value="{{$course['course_id']}}" name="id" class="form-control" placeholder="Id">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
                     <strong>Kurzus kód:</strong>
                     <input type="text" value="{{$course['code']}}" name="code" class="form-control" placeholder="Kurzus kód">
                 </div>
@@ -47,14 +41,22 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Kategória Id:</strong>
-                    <input type="number" name="categoryId" value="{{$course['category_id']}}" class="form-control" placeholder="Kategória Id">
+                    <strong>Kategória:</strong>
+                    <select name="categoryId" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->category_id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Tulajdonos Id:</strong>
-                    <input type="number " value="{{$course['owner_id']}}" name="ownerId" class="form-control" placeholder="Tulajdonos Id">
+                    <strong>Tulajdonos:</strong>
+                    <select name="ownerId" class="form-control">
+                        @foreach ($owners as $owner)
+                            <option value="{{$owner->user_id}}">{{$owner->username}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
