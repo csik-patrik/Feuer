@@ -29,32 +29,34 @@
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Id:</strong>
-                <input type="number" name="id" class="form-control" placeholder="Id">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>Kurzus kód:</strong>
                 <input type="text" name="code" class="form-control" placeholder="Kurzus kód">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Név:</strong>
+                <strong>Kurzus kód:</strong>
                 <input type="text" name="name" class="form-control" placeholder="Név">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Kategória Id:</strong>
-                <input type="number" name="categoryId" class="form-control" placeholder="Kategória Id">
+                <strong>Kategória:</strong>
+                <select name="categoryId" class="form-control">
+                    @foreach ($categories as $category)
+                        <option value="{{$category->category_id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Tulajdonos Id:</strong>
-                <input type="number" name="ownerId" class="form-control" placeholder="Tulajdonos Id">
+                <strong>Tulajdonos:</strong>
+                <select name="ownerId" class="form-control">
+                    @foreach ($owners as $owner)
+                        <option value="{{$owner->user_id}}">{{$owner->username}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

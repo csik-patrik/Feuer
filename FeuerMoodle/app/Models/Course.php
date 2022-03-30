@@ -7,14 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    public $timestamps = false;
+    public $timestamps = true;
     protected $primaryKey = 'course_id';
     protected $fillable = [
-        'course_id',
         'code',
         'name',
         'category_id',
         'owner_id'
     ];
+    public function category()
+    {
+        return $this->belongsTo(CourseCategory::class, 'category_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
     use HasFactory;
 }

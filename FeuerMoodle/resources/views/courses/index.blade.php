@@ -1,8 +1,5 @@
 @extends('courses.layout')
- 
 @section('content')
-    
-<div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -13,50 +10,35 @@
             </div>
         </div>
     </div>
-   
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-   
     <table class="table table-bordered">
         <tr>
-            <th>Sorszám</th>
-            <th>ID</th>
             <th>Kód</th>
             <th>Név</th>
-            <th>Kategória ID</th>
-            <th>Tulajdonos ID</th>
+            <th>Kategória</th>
+            <th>Tulajdonos</th>
             <th>Művelet</th>
         </tr>
         @foreach ($courses as $course)
         <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $course->course_id }}</td>
             <td>{{ $course->code }}</td>
             <td>{{ $course->name }}</td>
-            <td>{{ $course->category_id }}</td>
-            <td>{{ $course->owner_id }}</td>
+            <td>{{ $course->category->name }}</td>
+            <td>{{ $course->user->username }}</td>
             <td>
                 <form action="{{ route('courses.destroy',$course->course_id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('courses.show',$course->course_id) }}">Részletek</a>
-    
-                    <a class="btn btn-primary" href="{{ route('courses.edit',$course->course_id) }}">Szerkesztés</a>
-   
                     @csrf
+                    <a class="btn btn-info" href="{{ route('courses.show',$course->course_id) }}">Részletek</a>
+                    <a class="btn btn-primary" href="{{ route('courses.edit',$course->course_id) }}">Szerkesztés</a>
                     @method('DELETE')
-      
                     <button type="submit" onclick="return confirm('Biztosan törli a kurzust?')" class="btn btn-danger">Törlés</button>
                 </form>
-
-                
             </td>
-            
         </tr>
         @endforeach
     </table>
-</div>
-    
 @endsection
