@@ -21,13 +21,11 @@ class AuthController extends Controller
         ]);
 
         $credentials = $request->only('username', 'password');
-        if (Auth::attempt($credentials))
-        {
+        if (Auth::attempt($credentials)) {
             return redirect()->intended('main')->withSuccess('Signed in');
         }
 
         return redirect('/')->withErrors(['login.invalid' => 'Invalid username or password']);
-
     }
 
     public function showMainPage()
@@ -42,5 +40,4 @@ class AuthController extends Controller
 
         return redirect('/');
     }
-
 }
