@@ -14,7 +14,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Felhasználók</h5>
                   <p class="card-text">Felhasználók menedzselése: Felhasználó megtekintése hozzáadása, módosítása, törlése.</p>
-                  <a href="{{ url("/courses") }}" class="btn btn-primary">Megnyitás</a>
+                  <a href="{{ url("/users") }}" class="btn btn-primary">Megnyitás</a>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Kurzusok</h5>
                   <p class="card-text">Kurzusok menedzselése: Kurzus megtekintése hozzáadása, módosítása, törlése.</p>
-                  <a href="{{ url("/users") }}" class="btn btn-primary">Megnyitás</a>
+                  <a href="{{ url("/courses") }}" class="btn btn-primary">Megnyitás</a>
                 </div>
             </div>
         </div>
