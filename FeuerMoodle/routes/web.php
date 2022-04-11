@@ -13,3 +13,5 @@ Route::resource('/users', UserController::class);
 Route::get('/admin', function () {
     return View('adminPage.index');
 });
+
+require __DIR__ . '/auth.php';
