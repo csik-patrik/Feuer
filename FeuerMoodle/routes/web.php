@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 
-Route::get('main', [AuthController::class, 'showMainPage'])->name('main');
+Route::get('/', function () {
+    return View('login');
+});
 
 Route::resource('/courses', CourseController::class);
 Route::resource('/users', UserController::class);

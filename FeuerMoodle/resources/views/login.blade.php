@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card border-0 shadow">
                         <div class="card-body p-5 text-center">
-                            <form method="POST" action="{{ route('login.auth') }}">
+                            <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="mb-4">
                                     <img src="images/logo.svg" width="120" height="120">
