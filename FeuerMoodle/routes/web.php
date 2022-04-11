@@ -8,11 +8,12 @@ Route::get('/', function () {
     return View('login');
 });
 
-Route::resource('/courses', CourseController::class);
-Route::resource('/users', UserController::class);
-
-Route::get('/admin', function () {
-    return View('adminPage.index');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('/courses', CourseController::class);
+    Route::resource('/users', UserController::class);
+    Route::get('/admin', function () {
+        return View('adminPage.index');
+    });
 });
 
 require __DIR__ . '/auth.php';
