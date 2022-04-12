@@ -20,20 +20,16 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>Sorszám</th>
-            <th>ID</th>
             <th>Felhasználónév</th>
             <th>Jelszó</th>
-            <th>Jogosultság ID</th>
+            <th>Jogosultság</th>
             <th>Művelet</th>
         </tr>
         @foreach ($users as $user)
         <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $user->user_id }}</td>
             <td>{{ $user->username }}</td>
             <td>{{ $user->password }}</td>
-            <td>{{ $user->role_id }}</td>
+            <td>{{ $user->role->role_name }}</td>
             <td>
                 <form action="{{ route('users.destroy',$user->user_id) }}" method="POST">
    
