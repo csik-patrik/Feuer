@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title') Adminisztráció @endsection
 @section('content')
     <div class="container">
         <div class="row">
