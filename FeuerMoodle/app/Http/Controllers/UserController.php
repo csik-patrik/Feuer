@@ -71,10 +71,6 @@ class UserController extends Controller
     {
         return view('users.show', compact('user'));
     }
-    public function showCourses(User $user)
-    {
-        return view('users.courses', compact('user'));
-    }
     /**
      * Show the form for editing the specified resource.
      *
