@@ -11,8 +11,13 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('/courses', CourseController::class);
     Route::resource('/users', UserController::class);
+
     Route::get('/admin', function () {
         return View('adminPage.index');
+    });
+
+    Route::get('/user/courses', function () {
+        return View('users.courses');
     });
 });
 
