@@ -9,9 +9,7 @@
     </head>
     <body>
         @include('_navbar')
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
         @include('_footer')
     </body>
 </html>
