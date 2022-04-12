@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-lg-4 margin-tb">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Kurzus kategórák">
+                <img class="card-img-top" height="150" src="{{ url('..\images\course_members.svg') }}" alt="Kurzus kategórák">
                 <div class="card-body">
                   <h5 class="card-title">Kurzus tagok</h5>
                   <p class="card-text">Kurzusok tagok menedzselése: Kurzus tagok megtekintése hozzáadása, módosítása, törlése.</p>
