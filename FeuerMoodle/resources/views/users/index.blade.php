@@ -22,7 +22,7 @@
         <tr>
             <th>Felhasználónév</th>
             <th>Jelszó</th>
-            <th>Jogosultság ID</th>
+            <th>Jogosultság</th>
             <th>Művelet</th>
         </tr>
         @foreach ($users as $user)
