@@ -23,5 +23,9 @@ class Course extends Model
     {
         return $this->belongsTo(User::class, 'owner_id');
     }
+    public function courseMember()
+    {
+        return $this->belongsToMany(User::class, 'course_members', 'course_id', 'user_id');
+    }
     use HasFactory;
 }
