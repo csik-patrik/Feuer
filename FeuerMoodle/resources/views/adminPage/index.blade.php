@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-lg-4 margin-tb">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" height="150" src="{{ url('..\images\user.svg') }}" alt="Felhasználók">
+                <img class="card-img-top mt-3" height="150" src="{{ url('..\images\user.svg') }}" alt="Felhasználók">
                 <div class="card-body">
                   <h5 class="card-title">Felhasználók</h5>
                   <p class="card-text">Felhasználók menedzselése: Felhasználó megtekintése hozzáadása, módosítása, törlése.</p>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-lg-4 margin-tb">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Kurzus kategórák">
+                <img class="card-img-top mt-3" height="150" src="{{ url('..\images\course_category.svg') }}" alt="Kurzus kategórák">
                 <div class="card-body">
                   <h5 class="card-title">Kurzus kategóriák</h5>
                   <p class="card-text">Kurzusok kategóriák menedzselése: Kurzus kategóriák megtekintése hozzáadása, módosítása, törlése.</p>
