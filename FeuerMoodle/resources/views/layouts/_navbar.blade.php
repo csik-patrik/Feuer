@@ -12,7 +12,7 @@
           <a class="nav-link" href="#">Felhasználók</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" >Kurzusok</a>
+          <a class="nav-link" href="{{url('/user/courses')}}" >Kurzusok</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Profil</a>
