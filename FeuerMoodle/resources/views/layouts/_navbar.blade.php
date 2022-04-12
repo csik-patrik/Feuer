@@ -12,13 +12,16 @@
           <a class="nav-link" href="#">Felhasználók</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kurzusok</a>
+          <a class="nav-link" >Kurzusok</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Profil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kilépés</a>
+          <form method="POST" action="{{route('logout')}}">
+            @csrf
+            <button type="submit" class="btn btn-dark">Kijelentkezés</button>
+          </form>
         </li>
       </ul>
     </div>
