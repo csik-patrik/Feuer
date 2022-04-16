@@ -1,7 +1,7 @@
 @extends('layouts.layout')
   
 @section('content')
-    <div class="container">
+    <div class="container p-3">
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
@@ -42,8 +42,12 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Jogosultság Id:</strong>
-                        <input type="number" name="roleId" class="form-control" placeholder="Jogosultság Id">
+                        <strong>Szerepkör:</strong>
+                        <select name="ownerId" class="form-control">
+                            @foreach ($roles as $role)
+                                <option value="{{$role->role_id}}">{{$role->role_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
