@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\CourseMember;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class CourseMemberController extends Controller
@@ -78,8 +80,8 @@ class CourseMemberController extends Controller
      * @param  \App\Models\CourseMember  $courseMember
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CourseMember $courseMember)
+    public function destroy(Course $course)
     {
-        //
+        CourseMember::where([['course_id', '=',  $course->course_id], ['user_id', '=',  Auth::user()->user_id]])->delete();
     }
 }
