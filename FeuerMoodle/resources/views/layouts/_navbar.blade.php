@@ -18,7 +18,7 @@
           <a class="nav-link" href="{{url('/user/courses')}}" >Kurzusok</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profil</a>
+          <a class="nav-link" href="#">{{ucfirst(Auth::user()->username)}}</a>
         </li>
         <li class="nav-item">
           <form method="POST" action="{{route('logout')}}">
