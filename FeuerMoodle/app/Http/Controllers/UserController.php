@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -27,7 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $roles = Role::orderBy('role_name')->get();
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -39,7 +41,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
             'username' => 'required',
             'password' => 'required',
             'roleId' => 'required',
@@ -58,7 +59,7 @@ class UserController extends Controller
         );
         // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
         return redirect()->route('users.index')
-            ->with('Sikeres hozzáadás', 'Felhasználó hozzáadása sikeres!');
+            ->with('success', 'Felhasználó hozzáadása sikeres!');
     }
 
     /**
@@ -79,7 +80,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        $roles = Role::orderBy('role_name')->get();
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -100,7 +102,7 @@ class UserController extends Controller
         $user->update($request->all());
 
         return redirect()->route('users.index')
-            ->with('Sikeres módosítás', 'Felhasználó módosítása sikeres!');
+            ->with('success', 'Felhasználó módosítása sikeres!');
     }
 
     /**
@@ -114,6 +116,6 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('users.index')
-            ->with('Sikeres törlés!', 'A felhasználó törlése sikeres!');
+            ->with('success', 'A felhasználó törlése sikeres!');
     }
 }
