@@ -15,9 +15,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::orderBy('role_id', 'desc')->get();
-    
-        return view('users.index',compact('users'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);    }
+
+        return view('users.index', compact('users'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -43,21 +44,21 @@ class UserController extends Controller
             'password' => 'required',
             'roleId' => 'required',
         ]);
-    
+
         //User::create($request->all());
         // date_default_timezone_set("Europe/Budapest");
         User::insert(
             [
-            'user_id' => $request['id'],
-            'username' => $request['username'],
-            'password' => $request['password'],
-            'role_id' => $request['roleId'],
-            // 'created_at' => date("Y-m-d h:i:sa")
+                'user_id' => $request['id'],
+                'username' => $request['username'],
+                'password' => $request['password'],
+                'role_id' => $request['roleId'],
+                // 'created_at' => date("Y-m-d h:i:sa")
             ]
         );
         // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
         return redirect()->route('users.index')
-                        ->with('Sikeres hozzáadás','Felhasználó hozzáadása sikeres!');
+            ->with('Sikeres hozzáadás', 'Felhasználó hozzáadása sikeres!');
     }
 
     /**
@@ -68,9 +69,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show',compact('user'));
+        return view('users.show', compact('user'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -79,7 +79,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit',compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -96,11 +96,11 @@ class UserController extends Controller
             'password' => 'required',
             'roleId' => 'required',
         ]);
-    
+
         $user->update($request->all());
-    
+
         return redirect()->route('users.index')
-                        ->with('Sikeres módosítás','Felhasználó módosítása sikeres!');
+            ->with('Sikeres módosítás', 'Felhasználó módosítása sikeres!');
     }
 
     /**
@@ -112,8 +112,8 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-    
+
         return redirect()->route('users.index')
-                        ->with('Sikeres törlés!','A felhasználó törlése sikeres!');
+            ->with('Sikeres törlés!', 'A felhasználó törlése sikeres!');
     }
 }
