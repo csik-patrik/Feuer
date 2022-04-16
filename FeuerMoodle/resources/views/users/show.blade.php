@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title') {{$user['username']}} részletek @endsection
+@section('title') {{$user['username']}} részletei @endsection
 @section('content')
     <div class="container p-3">
         <table class="table  table-striped">
