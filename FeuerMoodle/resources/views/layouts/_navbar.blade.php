@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Kezdőlap</a>
+          <a class="nav-link" href="{{url('/')}}">Kezdőlap</a>
         </li>
         @auth
             @if(Auth::user()->role->role_id==1)
