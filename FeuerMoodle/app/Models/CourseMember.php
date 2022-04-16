@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CourseMember extends Model
 {
     use HasFactory;
+    public $timestamps = true;
+    protected $table = 'course_members';
 }
