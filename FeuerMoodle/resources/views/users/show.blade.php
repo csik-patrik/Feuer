@@ -4,14 +4,13 @@
     <div class="container p-3">
         <table class="table  table-striped">
             <thead class="thead-dark">
-                <tr class="row">
+                <tr class="row p-1">
                     <th class="col-lg-11 margin-tb" scope="col">Felhasználó részeleti:</th>
-                    <th class="col-lg-1 margin-tb" scope="col"><a class="btn btn-primary" href="{{ route('users.index') }}"> Vissza</a></th>
-                    
+                    <th class="col-lg-1 margin-tb p-1" scope="col"><a class="btn btn-primary" href="{{ route('users.index') }}"> Vissza</a></th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="row">
+                <tr class="row p-1">
                     <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Felhasználónév:</th>
                     <td class="col-lg-6 col-md-6 col-sm-12">{{$user->username}}</td>
                 </tr>
