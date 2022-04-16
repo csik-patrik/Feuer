@@ -24,12 +24,20 @@
             <th>Kurzus kód</th>
             <th>Kurzus név</th>
             <th>Kategória</th>
+            <th>Művelet</th>
         </tr>
         @foreach (Auth::user()->courses as $course)
         <tr>
             <td>{{ $course->code }}</td>
             <td>{{ $course->name }}</td>
             <td>{{ $course->category->name }}</td>
+            <td>
+                <form action="{{ route('courseMembers.destroy',$course->course_id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" onclick="return confirm('Biztosan leadja a kurzust?')" class="btn btn-danger">Leadás</button>
+                </form>
+            </td>
         </tr>
         @endforeach
         
