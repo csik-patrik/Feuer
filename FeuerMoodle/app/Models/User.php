@@ -33,6 +33,6 @@ class User extends Authenticatable
     }
     public function userData()
     {
-        return $this->belongsTo(UserData::class, 'user_id');
+        return $this->hasOne(UserData::class, 'user_id');
     }
 }
