@@ -43,7 +43,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Szerepkör:</strong>
-                        <select name="ownerId" class="form-control">
+                        <select name="roleId" class="form-control">
                             @foreach ($roles as $role)
                                 <option value="{{$role->role_id}}">{{$role->role_name}}</option>
                             @endforeach
