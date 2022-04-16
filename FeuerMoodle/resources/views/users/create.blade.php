@@ -30,12 +30,6 @@
              <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Id:</strong>
-                        <input type="number" name="id" class="form-control" placeholder="Id">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
                         <strong>Felhasználónév:</strong>
                         <input type="text" name="username" class="form-control" placeholder="Felhasználónév">
                     </div>
