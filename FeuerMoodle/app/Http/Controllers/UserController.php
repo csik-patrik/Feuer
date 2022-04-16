@@ -101,7 +101,7 @@ class UserController extends Controller
         $user->update($request->all());
 
         return redirect()->route('users.index')
-            ->with('Sikeres módosítás', 'Felhasználó módosítása sikeres!');
+            ->with('success', 'Felhasználó módosítása sikeres!');
     }
 
     /**
@@ -115,6 +115,6 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('users.index')
-            ->with('Sikeres törlés!', 'A felhasználó törlése sikeres!');
+            ->with('success', 'A felhasználó törlése sikeres!');
     }
 }
