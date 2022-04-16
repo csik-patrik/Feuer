@@ -14,9 +14,13 @@
               </li>
             @endif
         @endauth
-        <li class="nav-item">
-          <a class="nav-link" href="{{url('/user/courses')}}" >Kurzusok</a>
-        </li>
+        @auth
+            @if(Auth::user()->role->role_id>1)
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('/user/courses')}}" >Kurzusok</a>
+              </li>
+            @endif
+        @endauth
         <li class="nav-item">
           <a class="nav-link" href="#">{{ucfirst(Auth::user()->username)}}</a>
         </li>
