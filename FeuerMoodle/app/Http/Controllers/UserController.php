@@ -59,7 +59,7 @@ class UserController extends Controller
         );
         // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
         return redirect()->route('users.index')
-            ->with('Sikeres hozzáadás', 'Felhasználó hozzáadása sikeres!');
+            ->with('success', 'Felhasználó hozzáadása sikeres!');
     }
 
     /**
