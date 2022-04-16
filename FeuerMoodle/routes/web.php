@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseMemberController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
@@ -19,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user/courses', function () {
         return View('users.courses');
     });
+
+    Route::resource('/courseMembers', CourseMemberController::class);
 });
 
 require __DIR__ . '/auth.php';
