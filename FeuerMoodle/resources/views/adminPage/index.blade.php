@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="card-deck">
-                <div height="100" class=" col-lg-3 col-md-6 col-sm-12">
+                <div class=" col-lg-3 col-md-6 col-sm-12">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top mt-3" height="150" src="{{ url('..\images\user.svg') }}" alt="Felhasználók">
                         <div class="card-body">
