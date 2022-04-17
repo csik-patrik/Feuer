@@ -1,55 +1,55 @@
 @extends('layouts.layout')
 @section('title'){{$user->username}} Módosítás @endsection 
 @section('content')
-    <div class="container p-3">
-        <div class="row">
-            <div class="col-lg-12 margin-tb">
-                <div class="pull-left">
-                    <h2>Felhasználó Módosítása</h2>
-                </div>
-                <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('users.index') }}"> Vissza </a>
-                </div>
-            </div>
-        </div>
-       
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>Hiba!</strong> Hibás bemeneti adatok!<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-      
-        <form action="{{ route('users.update',$user->user_id) }}" method="POST">
-            @csrf
-            @method('PUT')
-       
-             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Felhasználónév:</strong>
+<div class="container p-3">
+    <table class="table  table-striped">
+        <thead class="thead-dark">
+            <tr class="row">
+                <th class="col-lg-11 margin-tb" scope="col">Felhasználó módosítása:</th>
+                <th class="col-lg-1 margin-tb p-1" scope="col"><a class="btn btn-primary" href="{{ route('users.index') }}"> Vissza</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <form action="{{ route('users.update',$user->user_id) }}" method="POST">
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Felhasználónév:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
                         <input type="text" value="{{$user['username']}}" name="username" class="form-control" placeholder="Felhasználónév">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Jelszó:</strong>
-                        <input type="password" name="password" class="form-control" placeholder="Jelszó">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Szerepkör:</strong>
+                    </td>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Vezetéknév:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
+                        <input type="text" value="{{$user['userData']['lastname']}}" name="lastname" class="form-control" placeholder="Vezeték név">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Keresztnév:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
+                        <input type="text" value="{{$user['userData']['firstname']}}" name="firstname" class="form-control" placeholder="Kereszt név">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Középső név:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
+                        <input type="text" value="{{$user['userData']['midname']}}" name="midname" class="form-control" placeholder="Középső név">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Jelszó:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
+                        <input type="password" value="{{$user['password']}}" name="password" class="form-control" placeholder="Jelszó">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Szerepkör:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12" >
                         <select name="role_id" class="form-control">
                             @foreach ($roles as $role)
                                 <option value="{{$role->role_id}}">{{$role->role_name}}</option>
                             @endforeach
                         </select>
-                    </th>
+                    </td>
                 </tr>
                 <tr class="row">
                     <th class="col-lg-6 col-md-6 col-sm-12" scope="row">E-mail cím:</th>
@@ -69,7 +69,7 @@
                     </td>
                     
                 </tr>
-            </form>
+            </div>
         </tbody>
     </table>
 </div>
