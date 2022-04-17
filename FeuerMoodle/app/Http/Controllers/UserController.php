@@ -43,7 +43,10 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required',
             'password' => 'required',
-            'role_id' => 'required',
+            'roleId' => 'required',
+            'lastname'  => 'required',
+            'firstname' => 'required',
+            'email' => 'required'
         ]);
 
         //User::create($request->all());
@@ -96,7 +99,10 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required',
             'password' => 'required',
-            'role_id' => 'required',
+            'roleId' => 'required',
+            'lastname'  => 'required',
+            'firstname' => 'required',
+            'email' => 'required'
         ]);
 
         $user->update($request->all());

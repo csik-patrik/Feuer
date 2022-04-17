@@ -49,12 +49,28 @@
                                 <option value="{{$role->role_id}}">{{$role->role_name}}</option>
                             @endforeach
                         </select>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                  <button type="submit" class="btn btn-primary">Módosítás</button>
-                </div>
-            </div>
-        </form>
-    </div>
+                    </th>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">E-mail cím:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
+                        <input type="text" value="{{$user['userData']['email']}}" name="email" class="form-control">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Telefonszám:</th>
+                    <td class="col-lg-6 col-md-6 col-sm-12">
+                        <input type="text" value="{{$user['userData']['phone']}}" name="phone" class="form-control">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td class="col-lg-12 col-md-12 col-sm-12 text-center" scope="row">
+                        <button type="submit" class="btn text-center btn-primary">Módosítás</button>
+                    </td>
+                    
+                </tr>
+            </form>
+        </tbody>
+    </table>
+</div>
 @endsection
