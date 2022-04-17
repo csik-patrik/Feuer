@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\UserData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -43,24 +45,29 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required',
             'password' => 'required',
-            'roleId' => 'required',
+            'role_id' => 'required',
             'lastname'  => 'required',
             'firstname' => 'required',
             'email' => 'required'
         ]);
-
-        //User::create($request->all());
-        // date_default_timezone_set("Europe/Budapest");
         User::insert(
             [
-                'user_id' => $request['id'],
                 'username' => $request['username'],
                 'password' => $request['password'],
-                'role_id' => $request['role_id'],
-                // 'created_at' => date("Y-m-d h:i:sa")
+                'role_id' => $request['role_id']
             ]
         );
-        // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
+        UserData::insert(
+            [
+                'user_id' => DB::table('users')->orderBy('user_id', 'desc')->first()->user_id,
+                'email' => $request['email'],
+                'firstname' => $request['firstname'],
+                'lastname'  => $request['lastname'],
+                'midname' => $request['midname'],
+                'email' => $request['email'],
+                'phone' => $request['phone']
+            ]
+        );
         return redirect()->route('users.index')
             ->with('success', 'Felhasználó hozzáadása sikeres!');
     }
