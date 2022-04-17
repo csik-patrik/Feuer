@@ -23,6 +23,7 @@
                     </div>
                 @endif
                 <form action="{{ route('users.store') }}" method="POST">
+                    @csrf
                     <tr class="row">
                         <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Felhasználónév:</th>
                         <td class="col-lg-6 col-md-6 col-sm-12">
