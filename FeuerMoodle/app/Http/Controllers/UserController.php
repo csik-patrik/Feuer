@@ -112,7 +112,15 @@ class UserController extends Controller
             'email' => 'required'
         ]);
 
-        $user->update($request->all());
+        $user->update($request->username, $request->password, $request->role_id);
+        DB::table('user_data')->where('user_id', '=', $user->user_id)
+            ->update(
+                ['email' => $request['email']],
+                ['lastname' => $request['lastname']],
+                ['firstname' => $request['firstname']],
+                ['midname' => $request['midname']],
+                ['phone' => $request['phone']]
+            );
 
         return redirect()->route('users.index')
             ->with('success', 'Felhasználó módosítása sikeres!');
