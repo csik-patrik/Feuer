@@ -20,13 +20,13 @@
                 <tr class="row">
                     <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Vezetéknév:</th>
                     <td class="col-lg-6 col-md-6 col-sm-12">
-                        <input type="text" value="{{$user['userData']['lastname']}}" name="lastname" class="form-control" placeholder="Vezeték név">
+                        <input type="text" value="{{$user['userData']['lastname']}}" name="lastname" class="form-control" placeholder="Vezetéknév">
                     </td>
                 </tr>
                 <tr class="row">
                     <th class="col-lg-6 col-md-6 col-sm-12" scope="row">Keresztnév:</th>
                     <td class="col-lg-6 col-md-6 col-sm-12">
-                        <input type="text" value="{{$user['userData']['firstname']}}" name="firstname" class="form-control" placeholder="Kereszt név">
+                        <input type="text" value="{{$user['userData']['firstname']}}" name="firstname" class="form-control" placeholder="Keresztnév">
                     </td>
                 </tr>
                 <tr class="row">
