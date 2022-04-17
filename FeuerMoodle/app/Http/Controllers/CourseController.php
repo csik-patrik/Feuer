@@ -45,16 +45,16 @@ class CourseController extends Controller
         $request->validate([
             'code' => 'required',
             'name' => 'required',
-            'categoryId' => 'required',
-            'ownerId' => 'required',
+            'category_id' => 'required',
+            'owner_id' => 'required',
         ]);
 
         Course::insert(
             [
                 'code' => $request['code'],
                 'name' => $request['name'],
-                'category_id' => $request['categoryId'],
-                'owner_id' => $request['ownerId'],
+                'category_id' => $request['category_id'],
+                'owner_id' => $request['owner_id'],
             ]
         );
         return redirect()->route('courses.index')
@@ -98,10 +98,9 @@ class CourseController extends Controller
         $request->validate([
             'code' => 'required',
             'name' => 'required',
-            'categoryId' => 'required',
-            'ownerId' => 'required',
+            'category_id' => 'required',
+            'owner_id' => 'required',
         ]);
-
         $course->update($request->all());
 
         return redirect()->route('courses.index')

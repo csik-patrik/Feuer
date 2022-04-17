@@ -43,7 +43,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Kategória:</strong>
-                        <select name="categoryId" class="form-control">
+                        <select name="category_id" class="form-control">
                             @foreach ($categories as $category)
                                 <option value="{{$category->category_id}}">{{$category->name}}</option>
                             @endforeach
@@ -53,7 +53,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Tulajdonos:</strong>
-                        <select name="ownerId" class="form-control">
+                        <select name="owner_id" class="form-control">
                             @foreach ($owners as $owner)
                                 <option value="{{$owner->user_id}}">{{$owner->username}}</option>
                             @endforeach
