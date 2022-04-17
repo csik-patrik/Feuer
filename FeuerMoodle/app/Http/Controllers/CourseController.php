@@ -98,10 +98,9 @@ class CourseController extends Controller
         $request->validate([
             'code' => 'required',
             'name' => 'required',
-            'categoryId' => 'required',
-            'ownerId' => 'required',
+            'category_id' => 'required',
+            'owner_id' => 'required',
         ]);
-
         $course->update($request->all());
 
         return redirect()->route('courses.index')
