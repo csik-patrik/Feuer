@@ -103,25 +103,29 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
         $request->validate([
             'username' => 'required',
             'password' => 'required',
-            'roleId' => 'required',
+            'role_id' => 'required',
             'lastname'  => 'required',
             'firstname' => 'required',
             'email' => 'required'
         ]);
-
-        $user->update($request->username, $request->password, $request->role_id);
+        $userMainData = array(
+            'username' => $request->username,
+            'password' => $request->password,
+            'role_id' => $request->role_id
+        );
+        $user->update($userMainData);
         DB::table('user_data')->where('user_id', '=', $user->user_id)
             ->update(
-                ['email' => $request['email']],
-                ['lastname' => $request['lastname']],
-                ['firstname' => $request['firstname']],
-                ['midname' => $request['midname']],
-                ['phone' => $request['phone']]
+                ['email' => $request->email],
+                ['lastname' => $request->lastname],
+                ['firstname' => $request->firstname],
+                ['midname' => $request->midname],
+                ['phone' => $request->phone]
             );
-
         return redirect()->route('users.index')
             ->with('success', 'Felhasználó módosítása sikeres!');
     }
