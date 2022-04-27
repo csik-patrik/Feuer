@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\UserData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -44,20 +46,28 @@ class UserController extends Controller
             'username' => 'required',
             'password' => 'required',
             'role_id' => 'required',
+            'lastname'  => 'required',
+            'firstname' => 'required',
+            'email' => 'required'
         ]);
-
-        //User::create($request->all());
-        // date_default_timezone_set("Europe/Budapest");
         User::insert(
             [
-                'user_id' => $request['id'],
                 'username' => $request['username'],
                 'password' => $request['password'],
-                'role_id' => $request['role_id'],
-                // 'created_at' => date("Y-m-d h:i:sa")
+                'role_id' => $request['role_id']
             ]
         );
-        // $request['id'], $request['code'], $request['name'], $request['category_id'], $request['owner_id']
+        UserData::insert(
+            [
+                'user_id' => DB::table('users')->orderBy('user_id', 'desc')->first()->user_id,
+                'email' => $request['email'],
+                'firstname' => $request['firstname'],
+                'lastname'  => $request['lastname'],
+                'midname' => $request['midname'],
+                'email' => $request['email'],
+                'phone' => $request['phone']
+            ]
+        );
         return redirect()->route('users.index')
             ->with('success', 'Felhasználó hozzáadása sikeres!');
     }
@@ -93,14 +103,29 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
         $request->validate([
             'username' => 'required',
             'password' => 'required',
             'role_id' => 'required',
+            'lastname'  => 'required',
+            'firstname' => 'required',
+            'email' => 'required'
         ]);
-
-        $user->update($request->all());
-
+        $userMainData = array(
+            'username' => $request->username,
+            'password' => $request->password,
+            'role_id' => $request->role_id
+        );
+        $user->update($userMainData);
+        DB::table('user_data')->where('user_id', '=', $user->user_id)
+            ->update(
+                ['email' => $request->email],
+                ['lastname' => $request->lastname],
+                ['firstname' => $request->firstname],
+                ['midname' => $request->midname],
+                ['phone' => $request->phone]
+            );
         return redirect()->route('users.index')
             ->with('success', 'Felhasználó módosítása sikeres!');
     }
