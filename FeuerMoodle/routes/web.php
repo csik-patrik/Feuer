@@ -9,7 +9,10 @@ Route::get('/', function () {
     return View('login');
 });
 Route::get('/profile', function () {
-    return View('profile');
+    return View('profiles/profile');
+});
+Route::get('/profile/update', function () {
+    return View('profiles/profileUpdate');
 });
 
 
