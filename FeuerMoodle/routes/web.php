@@ -8,15 +8,16 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return View('login');
 });
-Route::get('/profile', function () {
-    return View('profiles/profile');
-});
-Route::get('/profile/update', function () {
-    return View('profiles/profileUpdate');
-});
+
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', function () {
+        return View('profiles/profile');
+    });
+    Route::get('/profile/update', function () {
+        return View('profiles/profileUpdate');
+    });
     Route::resource('/courses', CourseController::class);
     Route::resource('/users', UserController::class);
     Route::get('/admin', function () {
