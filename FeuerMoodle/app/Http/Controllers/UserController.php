@@ -117,15 +117,17 @@ class UserController extends Controller
             'password' => $request->password,
             'role_id' => $request->role_id
         );
+        $userOtherData = array(
+            'email' => $request->email,
+            'lastname' => $request->lastname,
+            'firstname' => $request->firstname,
+            'midname' => $request->midname,
+            'phone' => $request->phone
+        );
         $user->update($userMainData);
         DB::table('user_data')->where('user_id', '=', $user->user_id)
-            ->update(
-                ['email' => $request->email],
-                ['lastname' => $request->lastname],
-                ['firstname' => $request->firstname],
-                ['midname' => $request->midname],
-                ['phone' => $request->phone]
-            );
+            ->update($userOtherData);
+
         return redirect()->route('users.index')
             ->with('success', 'Felhasználó módosítása sikeres!');
     }
