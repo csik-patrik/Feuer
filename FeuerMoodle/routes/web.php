@@ -5,7 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return View('login');
 });
 
@@ -27,6 +27,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/user/courses', function () {
         return View('users.courses');
+    });
+    Route::get('/', function () {
+        return View('mainPage.index');
     });
 });
 
