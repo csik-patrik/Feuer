@@ -13,10 +13,10 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', function () {
-        return View('profiles/profile');
+        return View('profiles.profile');
     });
     Route::get('/profile/update', function () {
-        return View('profiles/profileUpdate');
+        return View('profiles.profileUpdate');
     });
     Route::resource('/courses', CourseController::class);
     Route::resource('/users', UserController::class);
