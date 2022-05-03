@@ -1,7 +1,5 @@
-<footer class="bg-secondary">
-    <div class="container">
-        <div class="text-center p-3">
+<footer>
+        <div class="p-3 footer-copyright text-center py-3 fixed-bottom bg-secondary text-light"">
             Copyright &copy; {{ now()->year }} {{ config('app.name') }}
         </div>
-    </div>
 </footer>
